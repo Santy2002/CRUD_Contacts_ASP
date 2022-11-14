@@ -1,0 +1,56 @@
+﻿@model CRUD_ASP.Models.Usuario
+@{
+    ViewData["Title"] = "Borrar Usuario";
+}
+<!--Class de Boostrap5-->
+<h1 class="text-center">CRUD Usuarios</h1>
+
+<div class="row">
+    <div class="col-12">
+        <div class="card border">
+            <div class="card header">
+                <h3 class="m-2"><strong>Crear un nuevo usuario</strong></h3>
+            </div>
+            <div class="card-body">
+                <!--Este asp action va a buscar el metodo crear del tipo HttpPOST
+                    en el HomeController, porque es el que va a enviar informacion -->
+                <form asp-action="Borrar">
+
+                    <!-- Id del usuario como campo oculto -->
+                    <input type="hidden" form="Id" />
+
+                    <!-- validation summary es para que respete las data annotation
+                        establecidas en el modelo (clase Usuario) -->
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="Nombre" class="control-label"></label>
+                        <input asp-for="Nombre" class="form-control" readonly/>
+                        <!--Como ya puse que el validation son las data annotation
+                            aca le digo que tiene que mostrar el mensaje que le puse
+                            en el required del campo Nombre, y asi con el resto -->
+                        <span asp-validation-for="Nombre" class="text-danger"></span>
+                    </div>
+                    <div class="form-group mt-2">
+                        <label asp-for="Telefono" class="control-label"></label>
+                        <input asp-for="Telefono" class="form-control" readonly/>
+                        <span asp-validation-for="Telefono" class="text-danger" />
+                    </div>
+                    <div class="form-group mt-2">
+                        <label asp-for="Celular" class="control-label"></label>
+                        <input asp-for="Celular" class="form-control" readonly/>
+                        <span asp-validation-for="Celular" class="text-danger"></span>
+                    </div>
+                    <div class="form-group mt-2">
+                        <label asp-for="Email" class="control-label"></label>
+                        <input asp-for="Email" class="form-control" readonly/>
+                        <span asp-validation-for="Email" class="text-danger" />
+                    </div>
+
+                    <div class="form-group mt-2">
+                        <button type="submit" class="btn btn-success mt-2"><i class="bi bi-eraser-fill"></i> Borrar Usuario</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

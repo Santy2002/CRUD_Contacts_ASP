@@ -1,0 +1,27 @@
+﻿<!-- Aca uso IEnumerable porque el model que voy a usar es una coleccion de datos del tipo Usuario
+Por eso despues puedo usar metodos especificos de una coleccion como Count o DisplayNameFor, etc.
+-->
+@model CRUD_ASP.Models.Usuario
+@{
+    ViewData["Title"] = "Detalle Usuario";
+}
+<!--Class de Boostrap5-->
+<h1 class="text-center">CRUD Usuarios</h1>
+
+<div class="row">
+    <div class="col-12">
+        <div class="card border">
+            <div class="card header">
+                <h3 class="m-2"><strong>Detalle de usuario</strong></h3>
+            </div>
+            <div class="card-body">
+                <ul class="list-group">
+                    <li class="list-group-item"><strong>Nombre: </strong>@Html.DisplayFor(m => m.Nombre)</li>
+                    <li class="list-group-item"><strong>Telefono: </strong>@Html.DisplayFor(m => m.Telefono)</li>
+                    <li class="list-group-item"><strong>Celular: </strong>@Html.DisplayFor(m => m.Celular)</li>
+                    <li class="list-group-item"><strong>Email: </strong>@Html.DisplayFor(m => m.Email)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
